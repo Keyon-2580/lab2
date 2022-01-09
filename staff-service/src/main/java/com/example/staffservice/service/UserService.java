@@ -1,7 +1,6 @@
 package com.example.staffservice.service;
 
 import com.example.common.domin.ResponseBean;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author: keyon
  * @time: 2022/1/3 11:40 上午
  */
-@FeignClient(name = "user-service")
+
 public interface UserService {
 
     /**

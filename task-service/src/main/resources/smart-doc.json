@@ -1,0 +1,11 @@
+{
+  "serverUrl": "http://localhost:8081",
+  "allInOne": true,
+  "outPath": "src/main/resources/static/doc",
+  "coverOld": true,
+  "createDebugPage": true,
+  "projectName": "smart-doc",
+  "sortByTitle":false,
+  "showAuthor":true,
+  "allInOneDocFileName":"index.html"
+}

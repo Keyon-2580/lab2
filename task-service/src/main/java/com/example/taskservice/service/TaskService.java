@@ -8,7 +8,7 @@ package com.example.taskservice.service;
 
 public interface TaskService {
     /**
-     *@description:
+     *@description:更新状态
      *@param:[userId]
      *@return:void
      *@time:2022/1/9 3:15 下午
@@ -16,7 +16,7 @@ public interface TaskService {
     void updateStatus(String userId);
 
     /**
-     *@description:
+     *@description:初始化
      *@param:[userId]
      *@return:void
      *@time:2022/1/9 4:17 下午

@@ -24,7 +24,7 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @PostMapping("task/generate")
+    @PostMapping("/task/generate")
     public ResponseBean generateTask(@RequestParam("user_id") String userId){
         taskService.generateTask(userId);
         return new ResponseBean<>(200,"success", null);
