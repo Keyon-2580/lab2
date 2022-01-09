@@ -1,5 +1,5 @@
 {
-  "serverUrl": "http://localhost:8081",
+  "serverUrl": "http://localhost:8082",
   "allInOne": true,
   "outPath": "src/main/resources/static/doc",
   "coverOld": true,

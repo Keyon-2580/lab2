@@ -1,4 +1,4 @@
-package com.example.staffservice.config;
+package com.example.userservice.config;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +36,7 @@ public class RedisConfig {
                 .serializeValuesWith(valuePair());
         // 返回 Redis 缓存管理器
         return RedisCacheManager.builder(factory)
-                .withCacheConfiguration("staff", cacheConfig1)
+                .withCacheConfiguration("user", cacheConfig1)
                 .build();
     }
 

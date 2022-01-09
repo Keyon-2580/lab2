@@ -26,20 +26,9 @@ public class StaffServiceImpl implements StaffService {
     @Override
     public void addStaff(Staff staff){
         staffDao.addStaff(staff);
-        String password = getRandomPassword();
-
     }
 
-    public String getRandomPassword(){
-        char[] source = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".toCharArray();
-        StringBuilder stringBuilder = new StringBuilder();
-        Random random = new Random();
-        int length = 6;
-        for(int i = 0;i < length; i++){
-            stringBuilder.append(source[random.nextInt(source.length)]);
-        }
-        return stringBuilder.toString();
-    }
+
 
 
     @Autowired
