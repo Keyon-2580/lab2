@@ -2,8 +2,10 @@ package com.example.taskservice.service;
 
 import com.example.taskservice.dao.TaskDao;
 import com.example.taskservice.domin.dbo.Task;
+import com.example.taskservice.domin.enums.TaskTypeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,6 +29,7 @@ public class TaskServiceImpl implements TaskService{
 
         taskDao.updateStatus(Task.builder()
                             .userId(userId)
+                            .type(TaskTypeEnum.MODIFY_PW.getTypeName())
                             .status(1)
                             .build());
     }
@@ -35,7 +38,19 @@ public class TaskServiceImpl implements TaskService{
     public void generateTask(String userId){
         taskDao.initStatus(Task.builder()
                 .userId(userId)
+                .type(TaskTypeEnum.MODIFY_PW.getTypeName())
                 .status(0)
                 .build());
+        log.info("generate new record");
+    }
+
+    @Override
+    public String getTask(String userId){
+
+        Task task = taskDao.initStatus(Task.builder().userId(userId).build());
+        if(task.getStatus() == 0){
+            return "You have one task which need you change password";
+        }
+        return "";
     }
 }

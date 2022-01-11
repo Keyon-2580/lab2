@@ -22,4 +22,12 @@ public interface TaskService {
      *@time:2022/1/9 4:17 下午
      */
     void generateTask(String userId);
+
+    /**
+     *@description:
+     *@param:[userId]
+     *@return:void
+     *@time:2022/1/11 11:17 上午
+     */
+    String getTask(String userId);
 }

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: user-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # Nacos服务注册中心地址
+        server-addr: http://116.62.185.219:8848
+        ip: 127.0.0.1
+
+server:
+  port: 8002

@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public String registerUser(String userId){
 
-
+        log.info("generate new record");
         String password = "";
         password = getRandomPassword();
         userDao.addUser(User.builder().userId(userId)

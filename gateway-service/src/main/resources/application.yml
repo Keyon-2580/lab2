@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #负载均衡
+
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "docs.spring.io"
+            allowedMethods:
+              - GET
+              - post
+              - options
+              - set
+              - put

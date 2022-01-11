@@ -18,5 +18,7 @@ public class Task {
 
     private String userId;
 
+    private String type;
+
     private int status;
 }

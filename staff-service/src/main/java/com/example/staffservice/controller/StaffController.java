@@ -3,7 +3,6 @@ package com.example.staffservice.controller;
 import com.example.common.domin.ResponseBean;
 import com.example.staffservice.domin.dbo.Staff;
 import com.example.staffservice.service.StaffService;
-import com.example.staffservice.service.StaffServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +31,7 @@ public class StaffController {
     public ResponseBean registerStaff(@RequestBody Staff staff){
 
         staffService.addStaff(staff);
-        return new ResponseBean<>(200,"",null);
+        return new ResponseBean<>(200,"register success!",null);
     }
 
 
