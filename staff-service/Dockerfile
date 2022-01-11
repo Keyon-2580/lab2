@@ -1,4 +1,4 @@
-FROM  openjdk:8u201-jdk-alpine3.9
+FROM  openjdk:8
 
 COPY target/staff-service-0.0.1-SNAPSHOT.jar /app/staff-service-0.0.1-SNAPSHOT.jar
 ENV LANG C.UTF-8
