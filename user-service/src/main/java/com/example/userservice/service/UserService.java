@@ -31,5 +31,5 @@ public interface UserService {
      *@return:void
      *@time:2022/1/9 2:11 下午
      */
-    void modifyPW(User user);
+    void modifyPassword(User user);
 }

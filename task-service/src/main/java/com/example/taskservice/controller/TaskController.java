@@ -22,17 +22,17 @@ public class TaskController {
     @PostMapping("/task/generate")
     public ResponseBean<String> generateTask(@RequestParam("user_id") String userId){
         taskService.generateTask(userId);
-        return new ResponseBean<>(200,"success", null);
+        return new ResponseBean<>(200,"success generate task", null);
     }
 
-    @PutMapping("task/update")
+    @PutMapping("/task/update")
     public ResponseBean<String> changeStatus(@RequestParam("user_id") String userId){
         taskService.updateStatus(userId);
-        return new ResponseBean<>(200, "done", null);
+        return new ResponseBean<>(200, "update task", null);
 
     }
 
-    @GetMapping("task/get-task")
+    @GetMapping("/task/get-task")
     public ResponseBean<String> getTask(@RequestParam("user_id") String userId){
         taskService.getTask(userId);
         return new ResponseBean<>(200, "Success", taskService.getTask(userId));

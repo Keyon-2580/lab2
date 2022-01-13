@@ -1,0 +1,112 @@
+{
+  "info": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "e6913f14-71f5-4837-8b82-b0e783d7ffb7",
+    "name": "user-service"
+  },
+  "item": [
+    {
+      "name": "Interface name is not set.",
+      "item": [
+        {
+          "name": "Interface name is not set.",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "type": "text",
+                  "description": "No comments found.",
+                  "value": "198"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://::server/user/register",
+              "protocol": "https",
+              "path": [
+                "user",
+                "register"
+              ],
+              "host": [
+                "{{server}}"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "198",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "",
+            "header": []
+          }
+        },
+        {
+          "name": "Interface name is not set.",
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://::server/user/login",
+              "protocol": "https",
+              "path": [
+                "user",
+                "login"
+              ],
+              "host": [
+                "{{server}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "description": "",
+            "header": []
+          }
+        },
+        {
+          "name": "Interface name is not set.",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"198\",\n  \"password\": \"emfcxp\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://::server/user/modify-password",
+              "protocol": "https",
+              "path": [
+                "user",
+                "modify-password"
+              ],
+              "host": [
+                "{{server}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "description": "",
+            "header": []
+          }
+        }
+      ]
+    }
+  ]
+}

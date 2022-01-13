@@ -1,0 +1,128 @@
+{
+  "info": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "70b7593b-7f92-4092-9ed9-4e92d60c59b8",
+    "name": "task-service"
+  },
+  "item": [
+    {
+      "name": "Interface name is not set.",
+      "item": [
+        {
+          "name": "Interface name is not set.",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "type": "text",
+                  "description": "No comments found.",
+                  "value": "139"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://::server/task/generate",
+              "protocol": "https",
+              "path": [
+                "task",
+                "generate"
+              ],
+              "host": [
+                "{{server}}"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "139",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "",
+            "header": []
+          }
+        },
+        {
+          "name": "Interface name is not set.",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "type": "text",
+                  "description": "No comments found.",
+                  "value": "139"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://::server/task/update",
+              "protocol": "https",
+              "path": [
+                "task",
+                "update"
+              ],
+              "host": [
+                "{{server}}"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "139",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "",
+            "header": []
+          }
+        },
+        {
+          "name": "Interface name is not set.",
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "type": "text",
+                  "description": "No comments found.",
+                  "value": "139"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://::server/task/get-task?user_id\u003d139",
+              "protocol": "https",
+              "path": [
+                "task",
+                "get-task"
+              ],
+              "host": [
+                "{{server}}"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "139",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "",
+            "header": []
+          }
+        }
+      ]
+    }
+  ]
+}

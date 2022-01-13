@@ -8,13 +8,7 @@ import com.example.staffservice.service.TaskService;
 import com.example.staffservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import java.util.Random;
 
 /**
  * @description:
@@ -47,6 +41,11 @@ public class StaffServiceImpl implements StaffService {
         }catch (Exception e){
             kafkaService.generateTask(staff.getNumber());
         }
+    }
+
+    @Override
+    public void changeDepartment(Staff staff){
+        staffDao.changeDepartment(staff);
     }
 
 

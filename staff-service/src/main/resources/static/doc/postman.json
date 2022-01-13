@@ -1,0 +1,45 @@
+{
+  "info": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "7816c966-e695-4525-a5fb-060bc08c1adf",
+    "name": "员工服务"
+  },
+  "item": [
+    {
+      "name": "用户管理",
+      "item": [
+        {
+          "name": "添加员工",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"智辉.尹\",\n  \"number\": \"by8m1e\",\n  \"department\": \"1r65fd\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/register-staff",
+              "protocol": "http",
+              "path": [
+                "register-staff"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "query": [],
+              "variable": []
+            },
+            "description": "添加员工",
+            "header": []
+          },
+          "description": "添加员工"
+        }
+      ]
+    }
+  ]
+}

@@ -39,9 +39,9 @@ public class UserController {
     }
 
     @PostMapping("/user/modify-password")
-    public ResponseBean modifyPassword(@RequestBody User user){
-        userService.modifyPW(user);
-        return new ResponseBean<>(200, "success", null);
+    public ResponseBean<String> modifyPassword(@RequestBody User user){
+        userService.modifyPassword(user);
+        return new ResponseBean<>(200, "success change password", null);
     }
 
 }

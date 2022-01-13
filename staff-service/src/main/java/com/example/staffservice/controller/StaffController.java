@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @description:
+ * 用户管理
  * @author: keyon
  * @time: 2021/12/29 5:05 下午
  */
@@ -22,16 +22,23 @@ public class StaffController {
     }
 
     /**
-     *@description:添加员工
-     *@param:[staff]
-     *@return:com.example.common.domin.ResponseBean
-     *@time:2021/12/29 10:32 下午
+     *添加员工
+     *@param: [staff]
+     *@return: com.example.common.domin.ResponseBean
+     *@time: 2021/12/29 10:32 下午
      */
     @PostMapping("/register-staff")
     public ResponseBean registerStaff(@RequestBody Staff staff){
 
         staffService.addStaff(staff);
         return new ResponseBean<>(200,"register success!",null);
+    }
+
+    @PutMapping("/staff/change-department")
+    public ResponseBean<String> changeDepartment(@RequestBody Staff staff){
+        staffService.changeDepartment(staff);
+        return new ResponseBean<>(200,"change success!",null);
+
     }
 
 

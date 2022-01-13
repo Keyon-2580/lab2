@@ -5,6 +5,7 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Repository;
 
+
 /**
  * @description:
  * @author: keyon
@@ -15,9 +16,13 @@ import org.springframework.stereotype.Repository;
 @CacheConfig(cacheNames = "staff")
 public class StaffDao {
 
-    @CachePut(key = "#staff.name")
+    @CachePut(key = "#staff.number")
     public Staff addStaff(Staff staff){
+        return staff;
+    }
 
+    @CachePut(key = "#staff.number")
+    public Staff changeDepartment(Staff staff){
         return staff;
     }
 

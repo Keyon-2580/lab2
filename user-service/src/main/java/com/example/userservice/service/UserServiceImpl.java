@@ -19,8 +19,15 @@ import java.util.Random;
 public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
+    private TaskService taskService;
+
     @Autowired
     private void setUserDao(UserDao userDao){this.userDao = userDao;}
+
+    @Autowired
+    private void setTaskService(TaskService taskService){
+        this.taskService = taskService;
+    }
 
     @Override
     public String registerUser(String userId){
@@ -42,8 +49,9 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void modifyPW(User user){
+    public void modifyPassword(User user){
         userDao.modifyPassword(user);
+        taskService.updateTask(user.getUserId());
     }
 
     public String getRandomPassword(){

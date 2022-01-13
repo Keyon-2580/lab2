@@ -12,4 +12,6 @@ public interface StaffService {
 
     void addStaff(Staff staff);
 
+    void changeDepartment(Staff staff);
+
 }
