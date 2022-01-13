@@ -4,6 +4,7 @@ import com.example.common.domin.ResponseBean;
 import com.example.staffservice.service.impl.TaskServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,5 +19,8 @@ public interface TaskService {
 
     @PostMapping("/task/generate")
     ResponseBean generateTask(@RequestParam("user_id") String userId);
+
+    @GetMapping("/task/get-task")
+    ResponseBean<Integer> getTaskStatus(@RequestParam("user_id") String userId);
 
 }

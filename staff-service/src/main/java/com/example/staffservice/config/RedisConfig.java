@@ -9,7 +9,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-
 import java.time.Duration;
 
 /**
@@ -25,9 +24,7 @@ public class RedisConfig {
         // 生成两套默认配置，通过 Config 对象即可对缓存进行自定义配置
         RedisCacheConfiguration cacheConfig1 = RedisCacheConfiguration.defaultCacheConfig()
                 // 设置过期时间 10 分钟
-                .entryTtl(Duration.ofMinutes(10))
-                // 设置缓存前缀
-                //.prefixKeysWith("cache:user:")
+                .entryTtl(Duration.ofDays(3))
                 // 禁止缓存 null 值
                 .disableCachingNullValues()
                 // 设置 key 序列化

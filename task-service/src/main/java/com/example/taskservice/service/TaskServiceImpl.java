@@ -45,12 +45,12 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public String getTask(String userId){
+    public Integer getTask(String userId){
 
-        Task task = taskDao.initStatus(Task.builder().userId(userId).build());
+        Task task = taskDao.getTask(Task.builder().userId(userId).build());
         if(task.getStatus() == 0){
-            return "You have one task which need you change password";
+            return 0;
         }
-        return "";
+        return 1;
     }
 }

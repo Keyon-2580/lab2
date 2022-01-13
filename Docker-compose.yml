@@ -12,7 +12,7 @@ services:
   task-service:
     build: task-service
     ports:
-      - "8002:8002"
+      - "8003:8003"
     environment:
       DB_URL: redis-service
 
@@ -20,7 +20,7 @@ services:
   user-service:
     build: user-service
     ports:
-    - "8003:8003"
+    - "8002:8002"
     environment:
       DB_URL: redis-service
 

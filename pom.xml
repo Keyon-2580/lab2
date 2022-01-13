@@ -9,7 +9,6 @@
     </parent>
     <modules>
         <module>staff-service</module>
-        <module>table-service</module>
         <module>task-service</module>
         <module>user-service</module>
         <module>common</module>

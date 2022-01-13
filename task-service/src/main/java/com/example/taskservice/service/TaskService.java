@@ -29,5 +29,5 @@ public interface TaskService {
      *@return:void
      *@time:2022/1/11 11:17 上午
      */
-    String getTask(String userId);
+    Integer getTask(String userId);
 }

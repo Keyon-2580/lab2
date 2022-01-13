@@ -2,6 +2,7 @@ package com.example.taskservice.controller;
 
 import com.example.common.domin.ResponseBean;
 import com.example.taskservice.service.TaskService;
+import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,9 +34,14 @@ public class TaskController {
     }
 
     @GetMapping("/task/get-task")
-    public ResponseBean<String> getTask(@RequestParam("user_id") String userId){
-        taskService.getTask(userId);
-        return new ResponseBean<>(200, "Success", taskService.getTask(userId));
-
+    public ResponseBean<Integer> getTask(@RequestParam("user_id") String userId){
+        int res = taskService.getTask(userId);
+        String status = "";
+        if(res == 1){
+            status = "done";
+        }else{
+            status = "todo";
+        }
+        return new ResponseBean<>(200, "Success get task status :" + status , res);
     }
 }

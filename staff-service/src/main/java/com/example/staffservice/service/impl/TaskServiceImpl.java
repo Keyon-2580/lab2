@@ -24,6 +24,11 @@ public class TaskServiceImpl implements TaskService {
         return null;
     }
 
+    @Override
+    public ResponseBean<Integer> getTaskStatus(String userId) {
+        return null;
+    }
+
     @Autowired
     private void setKafkaService(KafkaService kafkaService){
         this.kafkaService = kafkaService;

@@ -3,6 +3,7 @@ package com.example.taskservice.dao;
 import com.example.taskservice.domin.dbo.Task;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -22,6 +23,11 @@ public class TaskDao {
 
     @CachePut(key = "#task.userId")
     public Task initStatus(Task task){
+        return task;
+    }
+
+    @Cacheable(key = "#task.userId")
+    public Task getTask(Task task){
         return task;
     }
 }

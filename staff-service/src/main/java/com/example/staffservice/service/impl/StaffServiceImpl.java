@@ -2,6 +2,7 @@ package com.example.staffservice.service.impl;
 
 import com.example.staffservice.dao.StaffDao;
 import com.example.staffservice.domin.dbo.Staff;
+import com.example.staffservice.domin.enums.DepartmentEnum;
 import com.example.staffservice.service.KafkaService;
 import com.example.staffservice.service.StaffService;
 import com.example.staffservice.service.TaskService;
@@ -9,6 +10,9 @@ import com.example.staffservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @description:
@@ -44,11 +48,26 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
+    public Map<String, Integer> getTaskNumber(){
+        Map<String, Integer> taskNumber = new HashMap<>(5);
+        List<Staff> staffs= staffDao.getAllStaff();
+        for(DepartmentEnum departmentEnum : DepartmentEnum.values()){
+            taskNumber.put(departmentEnum.getType(), 0);
+        }
+        for(Staff staff : staffs){
+            String department = staff.getDepartment();
+            String userId = staff.getNumber();
+            if(taskService.getTaskStatus(userId).getData() == 1){
+                taskNumber.put(department, taskNumber.get(department) + 1);
+            }
+        }
+        return taskNumber;
+    }
+
+    @Override
     public void changeDepartment(Staff staff){
         staffDao.changeDepartment(staff);
     }
-
-
 
 
 

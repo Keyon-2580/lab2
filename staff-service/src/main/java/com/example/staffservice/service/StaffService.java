@@ -2,6 +2,8 @@ package com.example.staffservice.service;
 
 import com.example.staffservice.domin.dbo.Staff;
 
+import java.util.Map;
+
 /**
  * @description:
  * @author: keyon
@@ -13,5 +15,7 @@ public interface StaffService {
     void addStaff(Staff staff);
 
     void changeDepartment(Staff staff);
+
+    Map<String, Integer> getTaskNumber();
 
 }

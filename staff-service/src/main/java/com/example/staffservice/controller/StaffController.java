@@ -5,6 +5,7 @@ import com.example.staffservice.domin.dbo.Staff;
 import com.example.staffservice.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.Map;
 
 /**
  * 用户管理
@@ -39,6 +40,11 @@ public class StaffController {
         staffService.changeDepartment(staff);
         return new ResponseBean<>(200,"change success!",null);
 
+    }
+
+    @GetMapping("/staff/department-task")
+    public ResponseBean<Map<String, Integer>> getDepartmentTaskNumber(){
+        return new ResponseBean<>(200, "get all department task", staffService.getTaskNumber());
     }
 
 

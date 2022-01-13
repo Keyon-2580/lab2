@@ -1,0 +1,13 @@
+#!/bin/bash
+docker ps | grep lab2 |awk '{print $1}' |xargs docker stop
+#docker images | grep lab2|awk '{print $3}'|xargs docker rmi -f
+#cd task-service/
+#mvn clean
+#mvn package -Dmaven.test.skip=true
+#cd ../staff-service
+#mvn clean
+#mvn package -Dmaven.test.skip=true
+#cd ../user-service
+#mvn clean
+#mvn package -Dmaven.test.skip=true
+#

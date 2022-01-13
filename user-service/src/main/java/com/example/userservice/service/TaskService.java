@@ -4,6 +4,7 @@ import com.example.common.domin.ResponseBean;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "task-service")
 public interface TaskService {
 
-    @PostMapping("/task/update")
+    @PutMapping("/task/update")
     ResponseBean<String> updateTask(@RequestParam("user_id") String userId);
 
 }
